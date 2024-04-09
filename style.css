@@ -1,0 +1,262 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    height: 200vh;
+    display: flex;
+    margin: 0px;
+    margin-top: 20px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+#home {
+    height: 200vh;
+    margin-top: 55px;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    background-color: #202020;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/*==============Landing Page===============*/
+
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjusted to use viewport height */
+    width: 100%;
+    background-image: url(https://media.discordapp.net/attachments/793948986187972619/1191495342072533012/2024-01-01_16.35.48.png?ex=66146382&is=6601ee82&hm=a3ff38370d8b1e3328729787667515fccdb8b5dea92efdd1163ad1154df7013a&=&format=webp&quality=lossless);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.intro {
+    font-size: 2vw;
+    font-family: Roboto;
+    margin-top: 0; /* Adjusted margin to remove space from the top */
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Adjusted to use percentage of the parent container */
+    width: 100%;
+    position: relative; /* Added position relative */
+}
+
+.hero-text {
+    font-size: 5vw;
+    position: absolute;
+    top: 40%;
+    left: 7%;
+    overflow: hidden;
+    text-shadow: 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Added to stack content vertically */
+    height: calc(100% - 70px); /* Adjusted to use percentage of the parent container */
+    width: 100%;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    text-align: center;
+    position: relative;
+    background-color: rgba(20, 20, 20, 0.9);
+    margin-bottom: 70px;
+}
+
+.text {
+    opacity: 100%;
+    font-size: 1vw;
+    margin: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.buttons {
+    display: flex;
+}
+
+.btn-discord {
+    width: 10rem;
+    height: 3rem;
+    border: 2px solid;
+    border-radius: 10px;
+    color: white;
+    font-family: Roboto;
+    font-size: 1vw;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background: linear-gradient(#9021da, #2b1470);
+}
+
+.btn-copy {
+    background-color: #353535;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: white;
+    font-family: Roboto;
+    font-size: 0.6vw;
+}
+
+.btn-copy:hover {
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.btn-discord:hover {
+    width: 10.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+/*================Navbar==================*/
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(#9021da, #2b1470);
+}
+
+.navbar {
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.nav-logo {
+    width: 72px;
+    height: 72px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-branding {
+    color: #fff;
+    text-decoration: none;
+    font-size: 36px;
+    font-family: Bitter;
+    font-weight: bolder;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-family: Prompt;
+    font-weight: 700;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: white;
+    margin-right: 1.5rem;
+}
+
+@media(max-width:1600px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media(max-width:1024px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #2b1470;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-item {
+        margin: 16px;
+        font-family: 'Prompt', sans-serif;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+}
+
+/*==============Status/Players List===============*/
+
+.status-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.online {
+    background-color: green;
+}
+
+.offline {
+    background-color: red;
+}
+
